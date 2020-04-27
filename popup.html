@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rohan Shortcut</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Modal Structure */
+
+      html,
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        margin: 0;
+        min-height: 180px;
+        padding: 0;
+        width: 450px;
+        background-color: #000000;
+      }
+
+      h1 {
+        font-family: "Menlo", monospace;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+        color: #fff;
+      }
+
+      a:link,
+      a:visited {
+        color: #000000;
+        outline: 0;
+        text-decoration: none;
+      }
+
+      img {
+        width: 30px;
+      }
+
+      .modal-header {
+        align-items: center;
+        border-bottom: 0.5px solid #dadada;
+      }
+
+      .modal-content {
+        padding: 0 22px;
+      }
+
+      .modal-icons {
+        border-top: 0.5px solid #dadada;
+        height: 50px;
+        width: 100%;
+      }
+
+      .logo {
+        padding: 16px;
+      }
+
+      .logo-icon {
+        vertical-align: text-bottom;
+        margin-right: 12px;
+      }
+      .version {
+        color: #444;
+        font-size: 18px;
+      }
+
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 22px;
+      }
+
+      .flex {
+        opacity: 1;
+        transition: opacity 0.1s ease-in-out;
+        width: 130px;
+      }
+
+      .flex:hover {
+        opacity: 0.4;
+      }
+
+      .flex .fa {
+        font-size: 40px;
+        color: #2f5876;
+      }
+      .text-white {
+        font-size: 20px;
+        color:#fff;
+      }
+      .iconDetails {
+          margin-left:0%;
+          float:left; 
+          height:250px;
+          width:200px; 
+      } 
+
+        .container2 {
+          width:100%;
+          height:auto;
+          padding:1%;
+      }
+      .clearbut{
+        background-color: #dadadada;
+        color: #000;
+        border-radius: 4px;
+        font-size: 20px;
+      }
+      .getStats{
+        background-color: #dadadada;
+        color: #000;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+      .inputBox{
+        border: 2px solid #dadada;
+        background-color: rgb(56, 196, 56);
+        color: black;
+        font-size: 17px;
+      }
+      
+    </style>
+    <script defer src="popup.js"></script>
+  </head>
+
+  <body>
+    <div class="modal-header">
+      <h1 class="logo">
+        <img class="logo-icon" src="images/rohan-logo.png" />COVID - 19 STATS
+        <span class="version text-white">2.0</span>
+      </h1>
+        <div>
+          <label class="text-white">Country: </label><input class="inputBox" id="te" type="text" placeholder="Enter Country">
+          <a class="getStats" id="click-this">&nbsp;<strong>Get Data</strong>&nbsp;</a>
+        </div>
+      <br>
+    </div>
+    <div class='container2'>
+        <div>
+            <img src='images/rohan-logo.png' class='iconDetails' style="padding: 5px 10px 5px 10px;">
+        </div>  
+        <div style='margin-left:0px;' style="padding: 10px 10px 10px 10px;">
+          <p></p>
+        <label class="text-white">Country: </label><span class="text-white" id="country"> </span><br><br>
+        <label class="text-white">Total Cases: </label> <span class="text-white" id="totalcases"></span><br><br>
+        <label class="text-white">Total Deaths: </label><span class="text-white" id="totaldeaths"> </span><br><br>
+        <label class="text-white">New Cases: </label><span class="text-white" id="new"> </span><br><br>
+        <label class="text-white">Recovered: </label><span class="text-white" id="rec"> </span><br><br>
+        <a class="clearbut" id="clear">&nbsp;<strong>Clear Values</strong>&nbsp;</a>
+    </div>
+  </div>   
+</body>
+</html>
