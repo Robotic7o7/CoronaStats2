@@ -34,6 +34,10 @@
         margin: 0;
         color: #fff;
       }
+      h6{
+        font-family: "Menlo", monospace;
+        font-size: 10px;
+      }
 
       a:link,
       a:visited {
@@ -41,11 +45,6 @@
         outline: 0;
         text-decoration: none;
       }
-
-      img {
-        width: 30px;
-      }
-
       .modal-header {
         align-items: center;
         border-bottom: 0.5px solid #dadada;
@@ -54,13 +53,6 @@
       .modal-content {
         padding: 0 22px;
       }
-
-      .modal-icons {
-        border-top: 0.5px solid #dadada;
-        height: 50px;
-        width: 100%;
-      }
-
       .logo {
         padding: 16px;
       }
@@ -68,6 +60,7 @@
       .logo-icon {
         vertical-align: text-bottom;
         margin-right: 12px;
+        width: 30px;
       }
       .version {
         color: #444;
@@ -86,27 +79,19 @@
         width: 130px;
       }
 
-      .flex:hover {
-        opacity: 0.4;
-      }
-
-      .flex .fa {
-        font-size: 40px;
-        color: #2f5876;
-      }
       .text-white {
         font-size: 20px;
         color:#fff;
       }
       .iconDetails {
-          margin-left:0%;
+          margin-left:5%;
           float:left; 
-          height:250px;
+          height:200px;
           width:200px; 
       } 
 
         .container2 {
-          width:100%;
+          width:auto;
           height:auto;
           padding:1%;
       }
@@ -120,13 +105,20 @@
         background-color: #dadadada;
         color: #000;
         border-radius: 4px;
-        font-size: 18px;
+        font-size: 19px;
+      }
+      .resetStats{
+        background-color: #ff0000da;
+        color: #000;
+        border-radius: 4px;
+        font-size: 19px;
       }
       .inputBox{
         border: 2px solid #dadada;
         background-color: rgb(56, 196, 56);
         color: black;
         font-size: 17px;
+        width: 200px;
       }
       
     </style>
@@ -135,29 +127,46 @@
 
   <body>
     <div class="modal-header">
-      <h1 class="logo">
+      <h1 class="logo" align="center">
         <img class="logo-icon" src="images/rohan-logo.png" />COVID - 19 STATS
         <span class="version text-white">2.0</span>
+        <img class="logo-icon" src="images/rohan-logo.png" />
       </h1>
-        <div>
+        <div >
           <label class="text-white">Country: </label><input class="inputBox" id="te" type="text" placeholder="Enter Country">
           <a class="getStats" id="click-this">&nbsp;<strong>Get Data</strong>&nbsp;</a>
+          <a class="resetStats" id="Reset">&nbsp;<strong>Reset</strong>&nbsp;</a>
         </div>
       <br>
     </div>
-    <div class='container2'>
-        <div>
-            <img src='images/rohan-logo.png' class='iconDetails' style="padding: 5px 10px 5px 10px;">
-        </div>  
-        <div style='margin-left:0px;' style="padding: 10px 10px 10px 10px;">
-          <p></p>
-        <label class="text-white">Country: </label><span class="text-white" id="country"> </span><br><br>
-        <label class="text-white">Total Cases: </label> <span class="text-white" id="totalcases"></span><br><br>
-        <label class="text-white">Total Deaths: </label><span class="text-white" id="totaldeaths"> </span><br><br>
-        <label class="text-white">New Cases: </label><span class="text-white" id="new"> </span><br><br>
-        <label class="text-white">Recovered: </label><span class="text-white" id="rec"> </span><br><br>
-        <a class="clearbut" id="clear">&nbsp;<strong>Clear Values</strong>&nbsp;</a>
-    </div>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+                <td width="200" valign="left">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                        <td x>
+                                            <img class="iconDetails" id="loadImage" width="200px" height="200px"/>
+                                        </td>
+                                </tr>
+                        </table>
+                </td>
+                <td width="200" valign="left">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                        <td>
+                                            <label class="text-white">Country: </label><span class="text-white" id="country"> </span><br><br>
+                                            <label class="text-white">Total Cases: </label> <span class="text-white" id="totalcases"></span><br><br>
+                                            <label class="text-white">Total Deaths: </label><span class="text-white" id="totaldeaths"> </span><br><br>
+                                            <label class="text-white">New Cases: </label><span class="text-white" id="new"> </span><br><br>
+                                            <label class="text-white">Recovered: </label><span class="text-white" id="rec"> </span><br><br> 
+                                          
+                                        </td>
+                                </tr>
+                        </table>
+                </td>
+        </tr>
+</table>
   </div>   
 </body>
 </html>

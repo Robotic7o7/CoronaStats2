@@ -3,10 +3,19 @@
         document.getElementById("click-this").addEventListener("click", hello);
       });
       document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById("clear").addEventListener("click", clearVal);
+        document.getElementById("Reset").addEventListener("click", clearVal);
       });
 
+      var customImageurl = "images/rohan-logo.png"
+      function loadGraphics(){
+          //v-- will work given your example conditions
+          document.getElementById("loadImage").src = customImageurl;
+      }
+      loadGraphics()
+     
     function clearVal(){
+        customImageurl = "images/rohan-logo.png";
+        loadGraphics();
         const myNode0 = document.getElementById("country");
         myNode0.innerHTML = '';
         const myNode1 = document.getElementById("totalcases");
@@ -36,12 +45,20 @@
         else if(country === "Italy" || country === "italy"){
             ItalyStat()
         }
+        else if(country === "Reset" || country === "reset"){
+            clearVal()
+        }
         else{
-            alert("No Data to Show")
+            alert("Country Invalid or No Data to Show")
+            customImageurl = "images/rohan-logo.png"
+            loadGraphics()
         }
         
     }
     function IndiaStat(){
+        clearVal()
+        customImageurl = "images/India.jpg";
+        loadGraphics();
         fetch('https://corona.lmao.ninja/v2/countries/India')
         .then(response=>{
             return response.json()
@@ -53,8 +70,12 @@
             document.getElementById('new').textContent += data.todayCases
             document.getElementById('rec').textContent += data.recovered
         })
+        
     }
     function USAStat(){
+        clearVal()
+        customImageurl = "images/USA.jpg";
+        loadGraphics();
         fetch('https://corona.lmao.ninja/v2/countries/USA')
         .then(response=>{
             return response.json()
@@ -68,6 +89,9 @@
         })
     }
     function ChinaStat(){
+        clearVal()
+        customImageurl = "images/China.jpg";
+        loadGraphics();
         fetch('https://corona.lmao.ninja/v2/countries/China')
         .then(response=>{
             return response.json()
@@ -81,6 +105,9 @@
         })
     }
     function ItalyStat(){
+        clearVal()
+        customImageurl = "images/Italy.jpg";
+        loadGraphics();
         fetch('https://corona.lmao.ninja/v2/countries/Italy')
         .then(response=>{
             return response.json()
@@ -94,6 +121,9 @@
         })
     }
     function FranceStat(){
+        clearVal()
+        customImageurl = "images/France.jpg";
+        loadGraphics();
         fetch('https://corona.lmao.ninja/v2/countries/France')
         .then(response=>{
             return response.json()
